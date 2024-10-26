@@ -20,7 +20,7 @@ var (
 
 func main() {
 	// open the file
-	file, err := os.Open("books_urls.txt")
+	file, err := os.Open("/download/books_urls.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -131,7 +131,7 @@ func main() {
 				log.Println("Folder already exist, investigate!")
 			}
 			var url = element
-			var path = dataTitle + "/" + "0" + strconv.Itoa(index) + ".m4a"
+			var path = "/download" + dataTitle + "/" + "0" + strconv.Itoa(index) + ".m4a"
 			wget(url, path)
 		}
 
