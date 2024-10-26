@@ -24,7 +24,7 @@ func check(e error) {
 
 func main() {
 	// links to 27 categories containing all of the books
-	categories := [27]string{
+	categories_en := [27]string{
 		"https://www.blinkist.com/en/nc/categories/entrepreneurship-and-small-business-en/books",
 		"https://www.blinkist.com/en/nc/categories/science-en/books",
 		"https://www.blinkist.com/en/nc/categories/economics-en/books",
@@ -52,6 +52,38 @@ func main() {
 		"https://www.blinkist.com/en/nc/categories/religion-and-spirituality-en/books",
 		"https://www.blinkist.com/en/nc/categories/biography-and-memoir-en/books",
 		"https://www.blinkist.com/en/nc/categories/creativity-en/books",
+	}
+
+	// links to 28 categories containing all of the books
+	categories_de := [28]string{
+		"https://www.blinkist.com/de/app/categories/unternehmertum-and-small-business-de",
+		"https://www.blinkist.com/de/app/categories/gesellschaft-and-politik-de",
+		"https://www.blinkist.com/de/app/categories/marketing-and-vertrieb-de",
+		"https://www.blinkist.com/de/app/categories/popularwissenschaft-de",
+		"https://www.blinkist.com/de/app/categories/gesundheit-and-fitness-de",
+		"https://www.blinkist.com/de/app/categories/personliche-entwicklung-de",
+		"https://www.blinkist.com/de/app/categories/wirtschaft-de",
+		"https://www.blinkist.com/de/app/categories/biographie-and-geschichte-de",
+		"https://www.blinkist.com/de/app/categories/kommunikation-and-soziale-kompetenzen-de",
+		"https://www.blinkist.com/de/app/categories/unternehmenskultur-de",
+		"https://www.blinkist.com/de/app/categories/management-and-leadership-de",
+		"https://www.blinkist.com/de/app/categories/motivation-and-inspiration-de",
+		"https://www.blinkist.com/de/app/categories/borse-and-geld-de",
+		"https://www.blinkist.com/de/app/categories/psychologie-de",
+		"https://www.blinkist.com/de/app/categories/produktivitat-and-zeitmanagement-de",
+		"https://www.blinkist.com/de/app/categories/beziehungen-and-elternschaft-de",
+		"https://www.blinkist.com/de/app/categories/technologie-and-zukunft-de",
+		"https://www.blinkist.com/de/app/categories/achtsamkeit-and-gluck-de",
+		"https://www.blinkist.com/de/app/categories/elternschaft-de",
+		"https://www.blinkist.com/de/app/categories/gesellschaft-and-kultur-de",
+		"https://www.blinkist.com/de/app/categories/natur-and-umwelt-de",
+		"https://www.blinkist.com/de/app/categories/biografien-and-memoiren-de",
+		"https://www.blinkist.com/de/app/categories/beruf-and-karriere-de",
+		"https://www.blinkist.com/de/app/categories/bildung-and-wissen-de",
+		"https://www.blinkist.com/de/app/categories/religion-and-glaube-de",
+		"https://www.blinkist.com/de/app/categories/kreativitat-de",
+		"https://www.blinkist.com/de/app/categories/philosophie-de",
+		"https://www.blinkist.com/de/app/categories/belletristik-de
 	}
 	// create a new collector
 	c := colly.NewCollector(
@@ -92,7 +124,7 @@ func main() {
 	})
 
 	// start scraping
-	for _, url := range categories {
+	for _, url := range categories_de {
 		c.Visit(url)
 	}
 
